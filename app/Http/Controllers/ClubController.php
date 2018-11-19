@@ -115,7 +115,16 @@ class ClubController extends Controller
      */
     public function show($id)
     {
-        //
+        $clubes = Club::findOrFail($id);
+       
+        $paises = Pais::all();
+        $asociaciones = Asociacion::all();
+        $torneos = Torneo::all();
+        $estadios = Estadio::all();
+        $ciudades = Ciudad::all();
+
+
+        return view('club.show',['clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios, 'ciudades' => $ciudades, 'paises' => $paises]);
     }
 
 

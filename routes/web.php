@@ -26,6 +26,10 @@ Route::get('club/{idClub}/destroy',[
 	'uses'	=>	'ClubController@destroy',
 	'as'	=>	'club.destroy'
 ]);
+Route::get('club/{idClub}/show',[
+	'uses'	=>	'ClubController@show',
+	'as'	=>	'club.show'
+]);
 
 //--------------Rutas de Pais---------------//
 
