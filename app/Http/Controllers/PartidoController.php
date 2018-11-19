@@ -108,8 +108,8 @@ class PartidoController extends Controller
     public function show($id)
     {   
 
-        $partidos = Partido::find($id);
-        $partidos = Partido::all();
+        $partidos = Partido::findOrFail($id);
+       
         $asociaciones=Asociacion::all();
         $clubes=Club::all();
         $ciudades=Ciudad::all();
@@ -118,7 +118,7 @@ class PartidoController extends Controller
         $torneos=Torneo::all();
         $arbitros=Arbitro::all();
 
-        return view('partido.show',['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos]);
+        return view('partido.show',['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios]);
                 
     }
 
