@@ -4,6 +4,114 @@
 @section ('titulo', 'Partidos')
 
 @section ('content')
+
+<div class="row border justify-content-center">
+	<div class="col">
+		@foreach($torneos as $tor)
+			@foreach($partidos as $part)
+				@if($part->idTorneo === $tor->idTorneo)
+					<h3>{{ $tor['nombreTorneo'] }}</h3>
+
+					<div class="row">
+						<div class="col-4 border" align="center">	
+							@foreach($clubes as $club)									
+								@if($part->clubLocalPartido === $club->idClub)
+									<span>{{ $club['nombreClub'] }}</span>
+								@endif
+							@endforeach
+						</div>
+						<div class="col-4 border" align="center">	
+								<span>{{ $part['golesLocalPartido'] }} - {{ $part['golesVisitaPartido'] }}</span>
+						</div>
+						<div class="col-4 border" align="center">	
+							@foreach($clubes as $club)									
+								@if($part->clubVisitaPartido === $club->idClub)
+									<span>{{ $club['nombreClub'] }}</span>
+								@endif
+							@endforeach			
+						</div>
+					</div>
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				@endif
+			@endforeach	
+		@endforeach
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--------------------------------------------------------------------------------------------------------
 	<a href="/partido/create" class="btn btn-default">Crear Partido</a>
 		<div class="row">
 			<table class="table table-striped">
@@ -48,7 +156,7 @@
 				@endforeach
 			</table>
 		</div>
-
+--->
 
 <!------------------------------------------------------------>
 
