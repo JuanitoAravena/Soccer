@@ -30,9 +30,20 @@ class PartidoController extends Controller
         $partidos = Partido::all();
         $clubes=Club::all();
         $torneos=Torneo::all();
+        
+        //Ordenar los partidos por dia
+        $hoy = getdate();
+        $dia = $hoy['mday'];
+        $mes = $hoy['mon'];
+        $year = $hoy['year'];
+        $fecha = "$year"."-"."$mes"."-"."$dia";
+        
 
 
-        return view('partido.index',  ['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos]);
+
+
+
+        return view('partido.index',  ['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'fecha' =>$fecha]);
 
 
     }
