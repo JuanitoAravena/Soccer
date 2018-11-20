@@ -57,13 +57,20 @@ class AsociacionController extends Controller
      */
     public function store(Request $request)
     {
+        if($request->hasFile('imagenAsociacion')){
+            $file = $request->file('imagenAsociacion');
+            $name = time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/asociacion/',$name);
+            
+            
+        }
         $asociacion = new Asociacion();
         $asociacion->idFederacion = $request->input('idFederacion');
         $asociacion->nombreAsociacion = $request->input('nombreAsociacion');
         $asociacion->fundacionAsociacion = $request->input('fundacionAsociacion');
         $asociacion->sedeAsociacion = $request->input('sedeAsociacion');
         $asociacion->idPais = $request->input('idPais');        
-        $asociacion->imagenAsociacion = $request->input('imagenAsociacion');
+        $asociacion->imagenAsociacion =$name;
         
         $asociacion->save();
 
