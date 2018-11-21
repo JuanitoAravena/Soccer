@@ -115,6 +115,10 @@ Route::get('partido/{idPartido}/show',[
 	'uses'	=>	'PartidoController@show',
 	'as'	=>	'partido.show'
 ]);
+Route::get('partido/{idPartido}/indexbuscador',[
+	'uses'	=>	'PartidoController@buscador',
+	'as'	=>	'partido.indexbuscador'
+]);
 
 
 //--------------Rutas de Torneo---------------//
@@ -142,7 +146,9 @@ Route::get('user/{idPais}/destroy',[
 ]);
 
 
+//------------Rutas de Administrador----------//
 
+Route::resource('admin','AdminController');
 
 
 

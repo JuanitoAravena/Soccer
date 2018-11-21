@@ -6,12 +6,12 @@
 @section ('content')
 
 <div class="row border justify-content-center">
+	
 	<div class="col">
 		@foreach($torneos as $tor) 
 			<h3>{{ $tor['nombreTorneo'] }} </h3><!-- Muestra los torneos que hay -->
 			@foreach($partidos as $part)
 				@if($part->idTorneo === $tor->idTorneo)
-					@if($part->fechaPartido === $fecha)	<!--Se muestran solo los partidos de hoy-->
 						<div class="row justify-content-center" >
 							<div class="col-4 border" align="right">	
 								@foreach($clubes as $club)									
@@ -47,26 +47,23 @@
 							</div>
 
 						</div>
-					@endif
+					
 				@endif
 			@endforeach	
-		@endforeach
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			
+		@endforeach	
 	</div>
+
+	<!--------------------BUSCADOR POR FECHA------------------------------>
+	
+			<div class="col-2">
+				<label for="">Fecha</label>
+					<input type="date" name="fecha" class="form-control">
+					<a href="">Ver partidos</a>
+
+			</div>
+		
+
+
 </div>
 
 

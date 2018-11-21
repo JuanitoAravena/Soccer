@@ -133,7 +133,23 @@ class PartidoController extends Controller
                 
     }
 
+//---------------------FUNCION BUSCADOR----------------------------------------------------------------------------
+    public function buscador($id)
+    {   
 
+        $partidos = Partido::findOrFail($id);
+       
+        $asociaciones=Asociacion::all();
+        $clubes=Club::all();
+        $ciudades=Ciudad::all();
+        $estadios=Estadio::all();
+        $paises=Pais::all();
+        $torneos=Torneo::all();
+        $arbitros=Arbitro::all();
+        dd(1);
+        return view('partido.indexbuscador',  ['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'fecha' =>$fecha]);
+                
+    }
 
 //---------------------------------Funcion que retorna las variables para el edit--------------------------------    
 
