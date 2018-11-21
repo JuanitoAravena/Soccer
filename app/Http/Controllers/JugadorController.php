@@ -59,6 +59,14 @@ class JugadorController extends Controller
      */
     public function store(Request $request)
     {
+         if($request->hasFile('imagenJugador')){
+            $file = $request->file('imagenJugador');
+            $name = time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/jugador/',$name);
+            
+            
+        }
+
         $jugador = new Jugador();
         $jugador->nombreJugador = $request->input('nombreJugador');
         $jugador->apellidosJugador = $request->input('apellidosJugador');
@@ -73,7 +81,8 @@ class JugadorController extends Controller
         $jugador->amarillasJugador = $request->input('amarillasJugador');
         $jugador->rojasJugador = $request->input('rojasJugador');
         $jugador->minutostotalesJugador = $request->input('minutostotalesJugador');        
-        $jugador->imagenJugador = $request->input('imagenJugador');        
+        $jugador->imagenJugador = $name;    
+
         $jugador->idPais = $request->input('idPais');        
         
         $jugador->save();

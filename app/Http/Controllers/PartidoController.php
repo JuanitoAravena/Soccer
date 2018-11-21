@@ -13,6 +13,11 @@ use App\Ciudad;
 use App\Pais;
 use App\Torneo;
 use App\Arbitro;
+use App\Jugador;
+use App\TrayectoriaJugador;
+use App\Historial;
+use DB;
+
 
 
 
@@ -127,7 +132,17 @@ class PartidoController extends Controller
         $torneos=Torneo::all();
         $arbitros=Arbitro::all();
 
-        return view('partido.show',['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios]);
+
+        $jugadores = Jugador::all();
+        $trayectoriasjugadores = TrayectoriaJugador::all();
+        $historiales = DB::table('Historiales')->get();
+
+       // dd($partidos);
+        //$jugadorHistorial = $historiales['idJugador'];
+       
+
+
+        return view('partido.show',['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios, 'jugadores' => $jugadores, 'trayectoriasjugadores' => $trayectoriasjugadores, 'historiales' => $historiales]);
                 
     }
 
