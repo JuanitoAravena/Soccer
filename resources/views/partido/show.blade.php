@@ -53,7 +53,7 @@
 			</div>
 		</div>
 
-		
+	@if(($partidos->estadoPartido != 'Suspendido')&&($partidos->estadoPartido != 'Proximo')) <!-- Valida para que no se muestren jugadores si se suspendió el partido o no se ha jugado-->
 		<div class="row border justify-content-center">
 			<h1>Plantillas</h1>
 			</div>
@@ -73,7 +73,7 @@
 					</div>
 				</div>
 			</div>
-		
+	@endif
 		
 
 @endsection
