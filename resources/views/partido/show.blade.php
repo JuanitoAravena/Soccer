@@ -58,21 +58,45 @@
 			<h1>Plantillas</h1>
 			</div>
 			<div class="col">
-	<!------------Plantilla Local------------------------>
 				<div class="row">
+
+					<!------------Plantilla Local------------------------>
+
 					<div class="col-5">
 						@foreach($clubes as $club)
 							@if($partidos->clubLocalPartido === $club->idClub)
 								@foreach($jugadores as $jug)
 									@if($club->idClub === $jug->idClub)
-									<p>{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</p>
+									<p align="left">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</p>
 									@endif
 								@endforeach
 							@endif
 						@endforeach
 					</div>
+					<!----------------------------------------------------->
+
+					<!-----------Plantilla Visita--------------------------->
+					<div class="col-5 " align="right">
+						@foreach($clubes as $club)
+							@if($partidos->clubVisitaPartido === $club->idClub)
+								@foreach($jugadores as $jug)
+									@if($club->idClub === $jug->idClub)
+									<p align="right">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</p>
+									@endif
+								@endforeach
+							@endif
+						@endforeach
+					</div>
+					<!----------------------------------------------------->
+
 				</div>
 			</div>
+
+
+
+
+
+
 	@endif
 		
 
