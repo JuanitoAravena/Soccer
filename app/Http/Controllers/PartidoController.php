@@ -41,8 +41,6 @@ class PartidoController extends Controller
 
 
 
-
-
         return view('partido.index',  ['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'fecha' =>$fecha]);
 
 
