@@ -25,7 +25,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+    
+  //  protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -36,4 +37,18 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+//---------Redireccionar por roles------------
+    public function redirectPath()
+    {
+        if(auth()->user()->authorizeRolesLogin('user')){
+         return '/partido';
+       }
+        if(auth()->user()->authorizeRolesLogin('admin')){
+         return '/admin';
+       }
+
+    }
+    
+
 }

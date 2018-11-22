@@ -24,8 +24,15 @@ class User extends Authenticatable
 
         abort(401, 'Esta acción no está autorizada.');
     }
+//---------FUNCION SOLO PARA VALIDAR LA REDIRECCION POR ROLES EN EL LOGIN----------
+    public function authorizeRolesLogin($roles){
+        if($this->hasAnyRole($roles)){
+                return true;
+            }
 
-
+        ;
+    }
+//-------------------------------------------------------------------------------
 
 
     //*******Validación de cuantos roles son***********
