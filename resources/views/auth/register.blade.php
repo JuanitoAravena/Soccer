@@ -25,22 +25,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="tipo" type="radio" name="tipo" value="usuario" selected>usuario
-                                <input id="tipo" type="radio" name="tipo" value="admin" disabled>admin
-
-
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('tipo') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                      
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>

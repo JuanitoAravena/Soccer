@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
-
+use App\Role;
 use App\User;
+
 
 class userController extends Controller
 {
@@ -40,17 +41,25 @@ class userController extends Controller
      */
     public function store(Request $request)
     {
+
+        $roles_user = Role::where('name', 'user')->first();  // Trae la informacion del usuario y el administrador
+
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->tipoUsuario = $request->input('tipoUsuario');
+        //$user->tipoUsuario = $request->input('tipoUsuario');
         $user->remember_token = $request->input('remembertoken');
-        $user->created_at = $request->input('created_at');
-        $user->update_at = $request->input('update_at');
+        //$user->created_at = $request->input('created_at');
+       // $user->update_at = $request->input('update_at');
 
+        //pass juanaravena = query1
+        //$ php artisan migrate:refresh --seed
 
         $user->save();
+
+        $user->roles()->attach($roles_user);//SE RELACIONAN LOS DOS MODELOS
+
 
         return Redirect::to('user');
     }
