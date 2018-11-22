@@ -15,17 +15,8 @@
 			<input type="text" name="email" class="form-control">
 			<label for="">Contraseña</label>
 			<input type="password" name="password" class="form-control">
-			<label for="">Tipo</label>
-			<select name="tipoUsuario" class="form-control">
-    				<option disabled selected value>Seleciona una opción...</option>
-					<option value="usuario">Usuario</option>
-					<option value="secretaria">Secretaria</option>
-					<option value="administrador">Administrador</option>
-					
-
-
-			</select>	
-
+			
+			
 				
 
 			<button type="submit" class="btn btn-primary">Guardar</button>

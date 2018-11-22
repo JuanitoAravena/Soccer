@@ -63,18 +63,27 @@
 					<!------------Plantilla Local------------------------>
 
 					<div class="col-5">
+						@foreach($historiales as $hist)
 						@foreach($clubes as $club)
 							@if($partidos->clubLocalPartido === $club->idClub)
 								@foreach($jugadores as $jug)
 									@if($club->idClub === $jug->idClub)
-									<p align="left">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</p>
+									
+										@foreach($jugador_partido as $jp)
+										<p align="left">{{ $jp->camisetaJugador }}
+ {{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</p>
+ 										@endforeach
+										
 									@endif
 								@endforeach
 							@endif
 						@endforeach
+						@endforeach
+
 					</div>
 					<!----------------------------------------------------->
 
+									
 					<!-----------Plantilla Visita--------------------------->
 					<div class="col-5 " align="right">
 						@foreach($clubes as $club)

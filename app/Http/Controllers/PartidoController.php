@@ -139,10 +139,27 @@ class PartidoController extends Controller
 
        // dd($partidos);
         //$jugadorHistorial = $historiales['idJugador'];
+
+
+
+
        
+        $jugador_partido =DB::table('Jugadores')
+                        ->join('TrayectoriasJugadores', 'TrayectoriasJugadores.idJugador', '=','Jugadores.idJugador')
 
 
-        return view('partido.show',['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios, 'jugadores' => $jugadores, 'trayectoriasjugadores' => $trayectoriasjugadores, 'historiales' => $historiales]);
+                        ->get();
+
+
+
+
+
+                     #   dd($jugador_partido);
+
+
+
+
+        return view('partido.show',['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios, 'jugadores' => $jugadores, 'trayectoriasjugadores' => $trayectoriasjugadores, 'historiales' => $historiales, 'jugador_partido' => $jugador_partido]);
                 
     }
 
