@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-
+use App\Jugador;
 use App\Club;
 use App\Asociacion;
 use App\Estadio;
@@ -122,9 +122,10 @@ class ClubController extends Controller
         $torneos = Torneo::all();
         $estadios = Estadio::all();
         $ciudades = Ciudad::all();
+        $jugadores = Jugador::orderBy('posicionJugador')->get();
+        //dd($jugadores);
 
-
-        return view('club.show',['clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios, 'ciudades' => $ciudades, 'paises' => $paises]);
+        return view('club.show',['clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios, 'ciudades' => $ciudades, 'paises' => $paises,  'jugadores'=>$jugadores]);
     }
 
 
