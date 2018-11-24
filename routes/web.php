@@ -71,6 +71,10 @@ Route::get('estadio/{idEstadio}/destroy',[
 	'uses'	=>	'EstadioController@destroy',
 	'as'	=>	'estadio.destroy'
 ]);
+Route::get('estadio/{idEstadio}/show',[
+	'uses'	=>	'EstadioController@show',
+	'as'	=>	'estadio.show'
+]);
 
 
 //--------------Rutas de Ciudad---------------//
@@ -130,6 +134,10 @@ Route::resource('torneo','TorneoController');
 Route::get('torneo/{idTorneo}/destroy',[
 	'uses'	=>	'TorneoController@destroy',
 	'as'	=>	'torneo.destroy'
+]);
+Route::get('torneo/{idTorneo}/show',[
+	'uses'	=>	'TorneoController@show',
+	'as'	=>	'torneo.show'
 ]);
 
 

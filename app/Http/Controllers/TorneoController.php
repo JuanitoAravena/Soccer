@@ -79,7 +79,12 @@ class TorneoController extends Controller
      */
     public function show($id)
     {
-        //
+        $torneos = Torneo::findOrFail($id);
+        $clubes = Club::all();
+       //dd($clubes);
+        
+
+        return view('torneo.show',['torneos' => $torneos, 'clubes' => $clubes]);
     }
 
 

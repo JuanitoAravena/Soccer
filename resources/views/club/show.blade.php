@@ -82,7 +82,7 @@
 								<div class="col align-self-center">
 									<img src="{{asset('images/jugador/' .$jug->imagenJugador)}}" class="img-responsive float-sm-left" style="width:90px !important; height:90px !important">
 							
-									<div class="row align-self-center">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</div>
+									<a href="{{ route('jugador.show', $jug->idJugador)}}" class="text-dark"><span class="row align-self-center">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</span></a>
 								</div>
 
 							</div>
@@ -98,7 +98,7 @@
 								<div class="col align-self-center">
 									<img src="{{asset('images/jugador/' .$jug->imagenJugador)}}" class="img-responsive float-sm-left" style="width:90px !important; height:90px !important">
 							
-									<div class="row align-self-center">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</div>
+									<a href="{{ route('jugador.show', $jug->idJugador)}}" class="text-dark"><span class="row align-self-center">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</span></a>
 								</div>
 
 							</div>
@@ -114,7 +114,7 @@
 								<div class="col align-self-center">
 									<img src="{{asset('images/jugador/' .$jug->imagenJugador)}}" class="img-responsive float-sm-left" style="width:90px !important; height:90px !important">
 							
-									<div class="row align-self-center">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</div>
+									<a href="{{ route('jugador.show', $jug->idJugador)}}" class="text-dark"><span class="row align-self-center">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</span></a>
 								</div>
 
 							</div>
@@ -130,7 +130,7 @@
 								<div class="col align-self-center">
 									<img src="{{asset('images/jugador/' .$jug->imagenJugador)}}" class="img-responsive float-sm-left" style="width:90px !important; height:90px !important">
 							
-									<div class="row align-self-center">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</div>
+									<a href="{{ route('jugador.show', $jug->idJugador)}}" class="text-dark"><span class="row align-self-center">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</span></a>
 								</div>
 
 							</div>

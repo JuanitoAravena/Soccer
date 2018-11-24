@@ -60,12 +60,13 @@
 								@foreach($torneos as $tor)
 									@if($tra->idTorneo === $tor->idTorneo)
 										<td>{{$tor->edicion}}</td>
-										<td>{{$tor->nombreTorneo}}</td>
+										<td><a href="{{ route('torneo.show', $tor->idTorneo)}}" class="text-dark">{{$tor->nombreTorneo}}</a></td>
 									@endif
 								@endforeach
+
 								@foreach($clubes as $club)
 									@if($tra->idClub === $club->idClub)
-										<td>{{$club->nombreClub}}</td>
+										<td><a href="{{ route('club.show', $club->idClub)}}" class="text-dark">{{$club->nombreClub}}</a></td>
 									@endif
 								@endforeach
 								<td>{{$tra->camisetaJugador}}</td>

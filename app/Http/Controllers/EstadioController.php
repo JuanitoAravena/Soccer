@@ -79,7 +79,13 @@ class EstadioController extends Controller
      */
     public function show($id)
     {
-        //
+        $estadios = Estadio::findOrFail($id);
+        $ciudades = Ciudad::all();
+        $paises   = Pais::all();
+       //dd($clubes);
+        
+
+        return view('estadio.show',['estadios' => $estadios, 'ciudades' => $ciudades, 'paises' => $paises]);
     }
 
 
