@@ -42,7 +42,7 @@ class userController extends Controller
     public function store(Request $request)
     {
 
-        $roles_user = Role::where('name', 'user')->first();  // Trae la informacion del usuario y el administrador
+        $roles_user = Role::where('name', 'comentarista')->first();  // Trae la informacion del usuario y el administrador
 
         $user = new User();
         $user->name = $request->input('name');

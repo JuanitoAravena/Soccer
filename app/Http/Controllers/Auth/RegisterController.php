@@ -67,7 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $roles_user = Role::where('name', 'user')->first();  // Trae la informacion del usuario 
+        $roles_user = Role::where('name', 'comentarista')->first();  // LOS USUARIOS QUE SE REGISTREN SERÁN DEL TIPO comentarista
 
         $user = User::create([
             'name' => $data['name'],

@@ -81,20 +81,11 @@
                 <div class="title m-b-md">
                     Soccer
                 </div>
+                
                 <div class="links">
-                    <a href="/arbitro">Arbitros</a>
-                    <a href="/asociacion">Asociaciones</a>
-                    <a href="/ciudad">Ciudad</a>
-                    <a href="/club">Clubes</a>
-                    <a href="/confederacion">Confederaciones</a>
-                    <a href="/directortecnico">DTs</a>
-                    <a href="/estadio">Estadios</a>
-                    <a href="/federacion">Federaciones</a>
-                    <a href="/jugador">Jugadores</a>
-                    <a href="/pais">Paises</a>
-                    <a href="/partido">Partidos</a>
-                    <a href="/torneo">Torneos</a>
+                    <a>Bienvenidos a la Plataforma, por favor Inicia sesión o Regsitrate</a>
                 </div>
+                
             </div>
         </div>
     </body>

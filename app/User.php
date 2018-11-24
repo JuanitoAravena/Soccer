@@ -29,6 +29,9 @@ class User extends Authenticatable
         if($this->hasAnyRole($roles)){
                 return true;
             }
+            else{
+                return null;
+            }
 
         ;
     }
