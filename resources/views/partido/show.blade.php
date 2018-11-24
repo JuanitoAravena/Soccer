@@ -66,7 +66,7 @@
     				<option disabled selected value>{{$partidos['idPartido']}}</option>
     				
     			</select>-->
-							<a href="{{ route('historial.create', $partidos->idPartido)}}" class="btn btn-default">Crear Historial</a>
+							<a href="{{ route('historial.create', $partidos->idPartido)}}" class="btn btn-default">Ingresar Jugador a plantilla</a>
 
 							<!--<button type="submit" class="btn btn-primary">Crear Plantillas</button>-->
 
@@ -84,7 +84,7 @@
 
 	@endif
 	
-	@if(($partidos->estadoPartido != 'Suspendido')) <!-- Valida para que no se muestren jugadores si se suspendió el partido o no se ha jugado-->
+	@if(($partidos->estadoPartido != 'Suspendido')) <!-- Valida para que no se muestren jugadores si se suspendió el partido-->
 		<div class="row border justify-content-center">
 
 			<h1>Plantillas</h1>
@@ -94,23 +94,17 @@
 
 					<!------------Plantilla Local------------------------>
 
-					<div class="col-5">
-						@foreach($historiales as $hist)
-						@foreach($clubes as $club)
-							@if($partidos->clubLocalPartido === $club->idClub)
-								@foreach($jugadores as $jug)
-									@if($club->idClub === $jug->idClub)
+					<div class="col-5" align="left">
+						
+							@foreach($plantilla as $plan)
+								@if($partidos->idPartido === $plan->idPartido)
+									@if($plan->idClub === $partidos->clubLocalPartido)
 									
-										@foreach($jugador_partido as $jp)
-										<p align="left">{{ $jp->camisetaJugador }}
- {{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</p>
- 										@endforeach
-										
+								<p>{{$plan->camisetaJugador}} - {{$plan->nombreJugador}} {{$plan->apellidosJugador}}</p>
 									@endif
-								@endforeach
-							@endif
-						@endforeach
-						@endforeach
+								@endif
+							@endforeach
+					
 
 					</div>
 					<!----------------------------------------------------->
@@ -118,15 +112,16 @@
 									
 					<!-----------Plantilla Visita--------------------------->
 					<div class="col-5 " align="right">
-						@foreach($clubes as $club)
-							@if($partidos->clubVisitaPartido === $club->idClub)
-								@foreach($jugadores as $jug)
-									@if($club->idClub === $jug->idClub)
-									<p align="right">{{ $jug['nombreJugador'] }} {{ $jug['apellidosJugador'] }}</p>
+
+						@foreach($plantilla as $plan)
+								@if($partidos->idPartido === $plan->idPartido)
+									@if($plan->idClub === $partidos->clubVisitaPartido)
+									
+								<p>{{$plan->nombreJugador}} {{$plan->apellidosJugador}}</p>
 									@endif
-								@endforeach
-							@endif
-						@endforeach
+								@endif
+							@endforeach
+
 					</div>
 					<!----------------------------------------------------->
 

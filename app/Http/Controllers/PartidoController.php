@@ -141,7 +141,10 @@ class PartidoController extends Controller
         //$jugadorHistorial = $historiales['idJugador'];
 
 
-
+        $jugadorclublocal = DB::table('Jugadores')
+                    ->join('Partidos', 'Partidos.clubLocalPartido','=','Jugadores.idClub')
+                    ->get();
+        //dd($jugadorclublocal);
 
        
         $jugador_partido =DB::table('Jugadores')
@@ -151,7 +154,12 @@ class PartidoController extends Controller
                         ->get();
 
 
-
+        $plantilla = DB::table('Historiales')
+                    ->join('Jugadores', 'Historiales.idJugador','=','Jugadores.idJugador')
+                    ->join('Partidos', 'Historiales.idPartido', '=', 'Partidos.idPartido')
+                    ->join('TrayectoriasJugadores', 'Jugadores.idJugador', '=', 'TrayectoriasJugadores.idJugador')
+                    ->get();
+                    //dd($plantilla);
 
 
                      #   dd($jugador_partido);
@@ -159,7 +167,7 @@ class PartidoController extends Controller
 
 
 
-        return view('partido.show',['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios, 'jugadores' => $jugadores, 'trayectoriasjugadores' => $trayectoriasjugadores, 'historiales' => $historiales, 'jugador_partido' => $jugador_partido]);
+        return view('partido.show',['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios, 'jugadores' => $jugadores, 'trayectoriasjugadores' => $trayectoriasjugadores, 'historiales' => $historiales, 'jugador_partido' => $jugador_partido, 'jugadorclublocal' => $jugadorclublocal, 'plantilla' => $plantilla]);
                 
     }
 

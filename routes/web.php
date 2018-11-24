@@ -136,10 +136,11 @@ Route::get('historial/{idHistorial}/destroy',[
 	'uses'	=>	'HistorialController@destroy',
 	'as'	=>	'historial.destroy'
 ]);
+//esta ruta le pasa el id del partido para crear las plantillas
 Route::get('historial/{idPartido}/create',[
 	'uses'	=>	'HistorialController@create',
 	'as'	=>	'historial.create']);
-
+///////////////////////////////////////////////////////////7
 
 //--------------Rutas de User---------------//
 Route::resource('user','UserController');
