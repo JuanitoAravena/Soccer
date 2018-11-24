@@ -95,6 +95,10 @@ Route::get('jugador/{idJugador}/destroy',[
 	'uses'	=>	'JugadorController@destroy',
 	'as'	=>	'jugador.destroy'
 ]);
+Route::get('jugador/{idJugador}/show',[
+	'uses'	=>	'JugadorController@show',
+	'as'	=>	'jugador.show'
+]);
 
 
 //--------------Rutas de DT---------------//

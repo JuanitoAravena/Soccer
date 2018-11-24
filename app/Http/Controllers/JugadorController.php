@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Redirect;
 use App\Pais;
 use App\Club;
 use App\Jugador;
+use App\TrayectoriaJugador;
+use App\Torneo;
 
 
 class JugadorController extends Controller
@@ -100,7 +102,15 @@ class JugadorController extends Controller
      */
     public function show($id)
     {
-        //
+        $jugadores = Jugador::findOrFail($id);
+       
+        $paises         = Pais::all();
+        $clubes         = Club::all();
+       $trayectorias    = TrayectoriaJugador::all();
+       $torneos         = Torneo::all();
+        //dd($trayectorias);
+
+        return view('jugador.show',['clubes' => $clubes, 'paises' => $paises,  'jugadores' => $jugadores, 'trayectorias' => $trayectorias, 'torneos' => $torneos]);
     }
 
 

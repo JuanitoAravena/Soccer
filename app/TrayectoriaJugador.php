@@ -8,9 +8,9 @@ class TrayectoriaJugador extends Model
 {
     protected $table = "TrayectoriasJugadores";
 
-    protected $primaryKey=['idJugador', 'idClub', 'idTorneo'];
+    protected $primaryKey='idTrayectoriaJugador';
 
-    protected $fillable = ['camisetaJugador'];
+    protected $fillable = ['idJugador', 'idClub', 'idTorneo','camisetaJugador'];
 
     public $timestamps = false;
 
