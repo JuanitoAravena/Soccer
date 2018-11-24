@@ -136,6 +136,9 @@ Route::get('historial/{idHistorial}/destroy',[
 	'uses'	=>	'HistorialController@destroy',
 	'as'	=>	'historial.destroy'
 ]);
+Route::get('historial/{idPartido}/create',[
+	'uses'	=>	'HistorialController@create',
+	'as'	=>	'historial.create']);
 
 
 //--------------Rutas de User---------------//

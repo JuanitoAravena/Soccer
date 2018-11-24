@@ -53,8 +53,40 @@
 			</div>
 		</div>
 
-	@if(($partidos->estadoPartido != 'Suspendido')&&($partidos->estadoPartido != 'Proximo')) <!-- Valida para que no se muestren jugadores si se suspendió el partido o no se ha jugado-->
+
+
+	@if(($partidos->estadoPartido != 'Suspendido')) <!-- Valida para que crear plantilla de jugadores del partido-->
+		<div class="row">
+			<div class="col">
+				<!----------- SOLO LE MUESTRA ESTA PARTE A LOS USUARIOS DE TIPO user ---------------->
+				@if(auth()->user()->authorizeRolesLogin('user')) 
+					<!--<form class="form-group" method="POST" action="/historial/{{$partidos->idPartido}}/create" enctype="multipart/form-data">	
+						
+    					<select name="idPartido" class="form-control">
+    				<option disabled selected value>{{$partidos['idPartido']}}</option>
+    				
+    			</select>-->
+							<a href="{{ route('historial.create', $partidos->idPartido)}}" class="btn btn-default">Crear Historial</a>
+
+							<!--<button type="submit" class="btn btn-primary">Crear Plantillas</button>-->
+
+
+						
+
+                	</form>
+
+				@endif
+				<!------------------------------------------------------------------------------------>
+
+			</div>
+		</div>		
+
+
+	@endif
+	
+	@if(($partidos->estadoPartido != 'Suspendido')) <!-- Valida para que no se muestren jugadores si se suspendió el partido o no se ha jugado-->
 		<div class="row border justify-content-center">
+
 			<h1>Plantillas</h1>
 			</div>
 			<div class="col">
@@ -100,13 +132,8 @@
 
 				</div>
 			</div>
-
-
-
-
-
-
 	@endif
 		
+	
 
 @endsection

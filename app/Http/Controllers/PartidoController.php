@@ -262,4 +262,59 @@ class PartidoController extends Controller
 
         return Redirect::to('partido');
     }
+
+
+//------------FUNCION PARA AGREGAR JUGADORES A PLANTILLA DE PARTIDO.INDEX-----------
+    
+
+
+    public function plantillacreate(Request $request)
+    {   
+        $request->user()->authorizeRoles('user'); //Se valida que el usuario que verá estos datos sea de tipo user
+
+        $asociaciones=Asociacion::all();
+        $clubes=Club::all();
+        $ciudades=Ciudad::all();
+        $estadios=Estadio::all();
+        $paises=Pais::all();
+        $torneos=Torneo::all();
+        $arbitros=Arbitro::all();
+
+        return view('partido.plantillacreate', ['asociaciones' => $asociaciones->toArray(), 'ciudades' => $ciudades->toArray(), 'clubes' => $clubes->toArray(), 'estadios' => $estadios->toArray(), 'paises' => $paises->toArray(), 'torneos' => $torneos->toArray(), 'arbitros' => $arbitros->toArray()]);
+    }
+
+
+    public function editplantilla (Request $request, $id){
+        $request->user()->authorizeRoles('admin');
+    }
+
+
+
+
+    public function updateplantilla(Request $request, $id)
+    {   
+        $request->user()->authorizeRoles('admin'); //Se valida que el usuario que verá estos datos sea de tipo administrador
+
+        $partido = Partido::findOrFail($id);
+        
+        $partido->clubLocalPartido = $request->input('clubLocalPartido');
+        $partido->clubVisitaPartido = $request->input('clubVisitaPartido');
+        $partido->fechaPartido = $request->input('fechaPartido');
+        $partido->horaPartido = $request->input('horaPartido');
+        $partido->jornadaPartido = $request->input('jornadaPartido');
+        $partido->idEstadio = $request->input('idEstadio');
+        $partido->idArbitroCentral = $request->input('idArbitroCentral');
+        $partido->idTorneo = $request->input('idTorneo');        
+        $partido->TipoPartido = $request->input('TipoPartido');
+        $partido->golesVisitaPartido = $request->input('golesVisitaPartido');
+        $partido->golesLocalPartido = $request->input('golesLocalPartido');
+        $partido->estadoPartido = $request->input('estadoPartido');
+        $partido->idArbitroAsistente1 = $request->input('idArbitroAsistente1');
+        $partido->idArbitroAsistente2 = $request->input('idArbitroAsistente2');
+        $partido->idCuartoArbitro = $request->input('idCuartoArbitro');
+  
+        $partido->update();
+
+        return Redirect::to('partido');
+    }
 }

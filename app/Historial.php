@@ -8,7 +8,7 @@ class Historial extends Model
 {
     protected $table = "Historiales";
 
-    protected $primaryKey=['idHistorial'];
+    protected $primaryKey='idHistorial';
 
     protected $fillable = ['idPartido', 'idJugador', 'golJugador', 'amarillaJugador', 'rojaJugador', 'minutosJugador'];
 
