@@ -35,7 +35,9 @@
 
 		<div class="row">
 			<div class="col">
-				<h1>Trayectoria</h1>
+				@if(auth()->user()->authorizeRolesLogin('user')) 
+					<a href="{{ route('trayectoriajugador.create', $jugadores->idJugador)}}" class="btn btn-default">crear Trayectoria</a>
+				@endif
 			</div>
 		</div>
 
@@ -47,8 +49,7 @@
 
 		<div class="row">
 			<div class="col">
-				@foreach($trayectorias as $tra)
-					@if($tra->idJugador === $jugadores->idJugador)
+				
 						<table class="table table-striped">
 							<thead>
 								<td>Año</td>
@@ -56,25 +57,30 @@
 								<td>Club</td>
 								<td>Número de camiseta</td>
 							</thead>
-							<tbody>
-								@foreach($torneos as $tor)
-									@if($tra->idTorneo === $tor->idTorneo)
-										<td>{{$tor->edicion}}</td>
-										<td><a href="{{ route('torneo.show', $tor->idTorneo)}}" class="text-dark">{{$tor->nombreTorneo}}</a></td>
-									@endif
-								@endforeach
+							
+								@foreach($trayectorias as $tra)
+									@if($tra->idJugador === $jugadores->idJugador)
+										<tbody>
+											@foreach($torneos as $tor)
+												@if($tra->idTorneo === $tor->idTorneo)
+													<td>{{$tor->edicion}}</td>
+													<td><a href="{{ route('torneo.show', $tor->idTorneo)}}" class="text-dark">{{$tor->nombreTorneo}}</a></td>
+												@endif
+											@endforeach
 
-								@foreach($clubes as $club)
-									@if($tra->idClub === $club->idClub)
-										<td><a href="{{ route('club.show', $club->idClub)}}" class="text-dark">{{$club->nombreClub}}</a></td>
+											@foreach($clubes as $club)
+												@if($tra->idClub === $club->idClub)
+													<td><a href="{{ route('club.show', $club->idClub)}}" class="text-dark">{{$club->nombreClub}}</a></td>
+												@endif
+											@endforeach
+											<td>{{$tra->camisetaJugador}}</td>
+										</tbody>
 									@endif
 								@endforeach
-								<td>{{$tra->camisetaJugador}}</td>
-							</tbody>
+							
 						</table>
 
-					@endif
-				@endforeach
+					
 			</div>
 		</div>
 

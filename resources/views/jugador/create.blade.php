@@ -39,14 +39,24 @@
 			</select>	
 		</div>
 
-		<div class="form-group">
+		<div class="col-3 form-group">
 
-			<label for="">Altura (cm)</label>
-			<input type="text" name="alturaJugador" class="form-control">
+			<label for="">Altura</label>
+			<div class="input-group mb-3">
+				<input type="text" name="alturaJugador" class="form-control">
+				<div class="input-group-append">
+	    		<span class="input-group-text">cm.</span>
+  				</div>
+			</div>
 		</div>
-		<div class="form-group">
-			<label for="">Peso (kg)</label>
-			<input type="text" name="pesoJugador" class="form-control">
+		<div class="col-3 form-group">
+			<label for="">Peso</label>
+				<div class="input-group mb-3">
+				<input type="text" name="pesoJugador" class="form-control">
+				<div class="input-group-append">
+	    		<span class="input-group-text">kg.</span>
+  				</div>
+			</div>
 		</div>
 		<div class="form-group">
 			<label>Pie</label>

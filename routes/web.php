@@ -152,7 +152,21 @@ Route::get('historial/{idHistorial}/destroy',[
 Route::get('historial/{idPartido}/create',[
 	'uses'	=>	'HistorialController@create',
 	'as'	=>	'historial.create']);
-///////////////////////////////////////////////////////////7
+///////////////////////////////////////////////////////////
+
+//------------------Rutas de TrayectoriaJugador-----------//
+Route::resource('trayectoriajugador','TrayectoriaJugadorController');
+Route::get('trayectoriajugador/{idTrayectoriaJugador}/destroy',[
+	'uses'	=>	'TrayectoriaJugadorController@destroy',
+	'as'	=>	'trayectoriajugador.destroy'
+]);
+//esta ruta le pasa el id del jugador para crear la trayectoria
+Route::get('trayectoriajugador/{idJugador}/create',[
+	'uses'	=>	'TrayectoriaJugadorController@create',
+	'as'	=>	'trayectoriajugador.create']);
+
+
+//**********************************************************/
 
 //--------------Rutas de User---------------//
 Route::resource('user','UserController');
