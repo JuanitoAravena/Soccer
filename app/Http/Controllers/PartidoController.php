@@ -146,6 +146,9 @@ class PartidoController extends Controller
                     ->get();
         //dd($jugadorclublocal);
 
+        $jugadorclubvisita = DB::table('Jugadores')
+                    ->join('Partidos', 'Partidos.clubVisitaPartido','=','Jugadores.idClub')
+                    ->get();
        
         $jugador_partido =DB::table('Jugadores')
                         ->join('TrayectoriasJugadores', 'TrayectoriasJugadores.idJugador', '=','Jugadores.idJugador')
@@ -167,7 +170,7 @@ class PartidoController extends Controller
 
 
 
-        return view('partido.show',['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios, 'jugadores' => $jugadores, 'trayectoriasjugadores' => $trayectoriasjugadores, 'historiales' => $historiales, 'jugador_partido' => $jugador_partido, 'jugadorclublocal' => $jugadorclublocal, 'plantilla' => $plantilla]);
+        return view('partido.show',['partidos' => $partidos, 'clubes' => $clubes, 'torneos' => $torneos, 'id' => $id, 'estadios' => $estadios, 'jugadores' => $jugadores, 'trayectoriasjugadores' => $trayectoriasjugadores, 'historiales' => $historiales, 'jugador_partido' => $jugador_partido, 'jugadorclublocal' => $jugadorclublocal, 'jugadorclubvisita' => $jugadorclubvisita, 'plantilla' => $plantilla]);
                 
     }
 

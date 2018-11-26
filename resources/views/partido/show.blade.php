@@ -37,13 +37,13 @@
 						@if (strcmp($partidos->idTorneo, $tor->idTorneo) === 0)
 							@if (strcmp($partidos->idEstadio, $est->idEstadio) === 0)
 
-
-								<p> Competición {{ $tor['nombreTorneo'] }}</p>
+								<p><a href="{{ route('torneo.show', $tor->idTorneo)}}" class="text-dark"><span class="row align-self-center"> <p> Competición {{ $tor['nombreTorneo'] }}</p></span></a></p>
+								
 								
 								<p> Fecha {{ $partidos['fechaPartido'] }}</p>
 								<p> Hora {{ $partidos['horaPartido'] }}</p>
 
-								<p> Estadio {{ $est['nombreEstadio'] }}</p>
+								<p><a href="{{ route('estadio.show', $est->idEstadio)}}" class="text-dark"><span class="row align-self-center"> <p>Estadio {{ $est['nombreEstadio'] }}</p></span></a></p>
 								<p> Estado {{ $partidos['estadoPartido'] }}</p>
 						@endif
 						@endif

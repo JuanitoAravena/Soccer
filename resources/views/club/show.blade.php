@@ -45,21 +45,10 @@
 		<div class="col">
 			@foreach($estadios as $est)
 				@if($clubes->idEstadio === $est->idEstadio)
-					<p>Nombre {{ $est['nombreEstadio'] }}</p>
-					@foreach($ciudades as $ciu)
-						@if($est->idCiudad === $ciu->idCiudad)
-							<p>Ciudad {{ $ciu['nombreCiudad'] }}</p>
-						@endif
-					@endforeach
-					@foreach($paises as $pais)
-						@if($est->idPais === $pais->idPais)
-							<p>País {{ $pais['nombrePais'] }}</p>
-						@endif
-					@endforeach
-					<p>Inauguración {{ $est['inauguracionEstadio'] }}</p>
-					<p>Capacidad {{ $est['capacidadEstadio'] }}</p>
+				<a href="{{ route('estadio.show', $est->idEstadio)}}" class="text-dark"><span class="row align-self-center"> <p>Nombre {{ $est['nombreEstadio'] }}</p></span></a>
 				@endif
-			@endforeach
+			@endforeach		
+			
 		</div>
 		
 		<div class="row">

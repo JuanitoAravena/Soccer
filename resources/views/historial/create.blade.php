@@ -98,6 +98,9 @@
                                     
                     <!-----------Plantilla Visita--------------------------->
                     <div class="col-4" align="right">
+                        <form class="form-group" method="POST" action="/historial" enctype="multipart/form-data"> 
+                        @csrf
+                         <input type="hidden" name="idPartido" value="{{$partidos->idPartido}}" class="form-control">
 
                         <label>Club Visita</label>
                             <select name="idJugador" class="form-control">
@@ -108,6 +111,8 @@
                                 @endif
                             @endforeach
                             </select>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                             </form>  
                     </div>
                     <!----------------------------------------------------->
 

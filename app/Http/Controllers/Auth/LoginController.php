@@ -47,6 +47,9 @@ class LoginController extends Controller
         if(auth()->user()->authorizeRolesLogin('admin')){
          return '/admin';
        }
+       if(auth()->user()->authorizeRolesLogin('comentarista')){
+         return '/partido';
+       }
 
     }
     

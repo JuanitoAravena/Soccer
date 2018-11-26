@@ -31,7 +31,7 @@ class TrayectoriaJugadorController extends Controller
      */
     public function create($id)
     {
-         $jugadores = Jugador::findOrFail($id);
+        $jugadores = Jugador::findOrFail($id);
        
         $paises         = Pais::all();
         $clubes         = Club::all();
@@ -60,7 +60,7 @@ class TrayectoriaJugadorController extends Controller
         
         $trayectoriajugador->save();
 
-        return Redirect::to('trayectoriajugador');
+        return Redirect::to('partido');
     }
 
     /**
@@ -82,7 +82,15 @@ class TrayectoriaJugadorController extends Controller
      */
     public function edit($id)
     {
-        //
+       $trayectorias    = TrayectoriaJugador::findOrFail($id); 
+       
+        $paises         = Pais::all();
+        $clubes         = Club::all();
+        
+        $jugadores = Jugador::all();
+        $torneos         = Torneo::all();
+
+        return view('trayectoriajugador.edit',['clubes' => $clubes, 'paises' => $paises,  'jugadores' => $jugadores, 'trayectorias' => $trayectorias, 'torneos' => $torneos]);
     }
 
     /**
@@ -94,7 +102,16 @@ class TrayectoriaJugadorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->user()->authorizeRoles('user'); //Se valida que el usuario que verá estos datos sea de tipo administrador
+        $trayectoriajugador = TrayectoriaJugador::findOrFail($id);
+        
+        $trayectoriajugador->camisetaJugador = $request->input('camisetaJugador');
+        $trayectoriajugador->idClub = $request->input('idClub');
+        $trayectoriajugador->idTorneo = $request->input('idTorneo');
+  
+        $trayectoriajugador->update();
+
+        return Redirect::to('partido');
     }
 
     /**
@@ -103,8 +120,12 @@ class TrayectoriaJugadorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $request->user()->authorizeRoles('user'); //Se valida que el usuario que verá estos datos sea de tipo administrador
+        $trayectoriajugador = TrayectoriaJugador::find($id);
+        $trayectoriajugador->delete();
+
+        return Redirect::to('partido');
     }
 }

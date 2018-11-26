@@ -37,6 +37,7 @@
 			<div class="col">
 				@if(auth()->user()->authorizeRolesLogin('user')) 
 					<a href="{{ route('trayectoriajugador.create', $jugadores->idJugador)}}" class="btn btn-default">crear Trayectoria</a>
+
 				@endif
 			</div>
 		</div>
@@ -56,6 +57,7 @@
 								<td>Torneo</td>
 								<td>Club</td>
 								<td>Número de camiseta</td>
+								<td>Acción</td>
 							</thead>
 							
 								@foreach($trayectorias as $tra)
@@ -74,6 +76,8 @@
 												@endif
 											@endforeach
 											<td>{{$tra->camisetaJugador}}</td>
+											<td><!--a href="/trayectoriajugador/{{$tra->idTrayectoriaJugador}}/edit" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span>Editar</a-->
+							<a href="{{ route('trayectoriajugador.destroy', $tra->idTrayectoriaJugador)}}" onclick="return confirm('¿Estás seguro que deseas eliminarlo?')" class="btn btn-danger">Eliminar</a></td>
 										</tbody>
 									@endif
 								@endforeach
