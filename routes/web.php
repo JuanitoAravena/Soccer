@@ -179,6 +179,8 @@ Route::get('user/{idPais}/destroy',[
 //------------Rutas de Administrador----------//
 
 Route::resource('admin','AdminController');
+ 	
+Route::get('/admin', 'AdminController@index')->name('admin.index');
 
 
 

@@ -4,6 +4,21 @@
 @section ('titulo', 'Partidos')
 
 @section ('content')
+
+<!---Buscador del Admin --->
+	<div class="row">
+		<div class="col">
+			<form class="form-inline my-2 my-lg-0" method="GET" action="/admin" enctype="multipart/form-data">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    	
+			</form>
+		</div>
+	</div>	
+
+<!--- Fin Buscador del Admin --->
+
+
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="arbitro-tab" data-toggle="tab" href="#arbitro" role="tab" aria-controls="arbitro" aria-selected="true">Arbitros</a>
@@ -43,9 +58,11 @@
   	<div class="tab-pane fade show active" id="arbitro" role="tabpanel" aria-labelledby="arbitro-tab">
   		<div class="row">
   			<div class="col">
+  					<a href="/arbitro/create" class="btn btn-success">Crear Arbitro</a>
 				<table class="table table-striped">
 					<thead>
 						<th>ID</th>
+						<th>Imagen</th>
 						<th>Nombre</th>
 						<th>Apellidos</th>
 						<th>Tipo</th>
@@ -61,6 +78,7 @@
 						@foreach($arbitros as $arb)
 							<tr>
 								<td>{{ $arb['idArbitro'] }}</td>
+								<td><img src="images/arbitro/{{ $arb['imagenArbitro']}}" class="img-responsive" style="width:45px !important; height:45px !important"></td>
 								<td>{{ $arb['nombreArbitro'] }}</td>
 								<td>{{ $arb['apellidosArbitro'] }}</td>
 								<td>{{ $arb['tipoArbitro'] }}</td>
@@ -76,14 +94,14 @@
 								<td>{{ $arb['gradoArbitro'] }}</td>
 
 								<td>
-									<a href="/arbitro/{{$arb->idArbitro}}/edit" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span>Editar</a>
+									<a href="/arbitro/{{$arb->idArbitro}}/edit" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>Editar</a>
 									<a href="{{ route('arbitro.destroy', $arb->idArbitro)}}" onclick="return confirm('¿Estás seguro que deseas eliminar el árbitro?')" class="btn btn-danger">Eliminar</a>
 									</td>
 							</tr>
 						@endforeach
 					</tbody>
 				</table>
-					<a href="/arbitro/create" class="btn btn-success">Crear Arbitro</a>
+				
 
 			</div>
 		</div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 use App\Asociacion;
 use App\Pais;
@@ -47,7 +48,16 @@ class AdminController extends Controller
         $estadios = Estadio::all();
         $jugadores = Jugador::all();
 
-
+        /*if ($request)
+        {
+            $query=trim($request->get('searchText'));//Se obtiene la busqueda por parte del usuario
+            foreach($all as $a){
+                if ($a->rut == $query) {
+                    $rut = $query;  
+                    return view('desafio.busqueda',['rut'=>$rut], compact('all'));
+                }
+            }
+        }*/
 
 
 

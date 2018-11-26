@@ -4,6 +4,16 @@
 @section ('titulo', 'Arbitros')
 
 @section ('content')
+
+	<div class="row">
+		<div class="col">
+			<h3>Datos ingresados correctamente.</h3>
+			<a href="{{ route('admin.index')}}">Volver</a>
+							</td>
+		</div>
+	</div>
+
+<!--
 	<a href="/arbitro/create" class="btn btn-default">Crear Arbitro</a>
 	
 	<div class="row">
@@ -49,7 +59,7 @@
 		</table>
 	</div>
 
-
+->
 
 
 @endsection
