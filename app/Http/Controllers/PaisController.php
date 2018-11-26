@@ -66,7 +66,7 @@ class PaisController extends Controller
    
         $pais->save();
 
-        return Redirect::to('pais');
+        return Redirect::to('admin');
 
     }
 //-------------------------------------------------------------------------------------------------------------------
@@ -121,7 +121,7 @@ class PaisController extends Controller
   
         $pais->update();
 
-        return Redirect::to('pais');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -133,13 +133,13 @@ class PaisController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {   
         $request->user()->authorizeRoles('admin'); //Se valida que el usuario que verá estos datos sea de tipo administrador
         $paises = Pais::find($id);
         $paises->delete();
 
-        return Redirect::to('pais');
+        return Redirect::to('admin');
 
     }
 }

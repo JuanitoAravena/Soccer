@@ -4,6 +4,16 @@
 @section ('titulo', 'Asociaciones')
 
 @section ('content')
+
+<div class="row">
+		<div class="col">
+			<h3>Datos ingresados correctamente.</h3>
+			<a href="{{ route('admin.index')}}">Volver</a>
+							</td>
+		</div>
+	</div>
+
+<!--
 	<a href="/asociacion/create" class="btn btn-default">Crear Asociación</a>
 	
 	<div class="row">
@@ -41,7 +51,7 @@
 			</tbody>
 		</table>
 	</div>	
-
+-->
 
 
 

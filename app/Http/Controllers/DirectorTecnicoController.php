@@ -63,7 +63,7 @@ class DirectorTecnicoController extends Controller
         
         $directortecnico->save();
 
-        return Redirect::to('directortecnico');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -123,7 +123,7 @@ class DirectorTecnicoController extends Controller
   
         $directortecnico->update();
 
-        return Redirect::to('directortecnico');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -140,6 +140,6 @@ class DirectorTecnicoController extends Controller
         $directorestecnicos = DirectorTecnico::find($id);
         $directorestecnicos->delete();
 
-        return Redirect::to('directortecnico');
+        return Redirect::to('admin');
     }
 }

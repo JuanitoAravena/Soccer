@@ -11,8 +11,8 @@
 		<div class="form-group">
 			<label for="">Nombre</label>
 			<input type="text" name="nombreAsociacion" class="form-control" value="{{$asociaciones->nombreAsociacion}}">
-			<label for="">Imagen</label>
-			<input type="file" name="imagenAsociacion" class="form-control" >
+			<!--label for="">Imagen</label>
+			<input type="file" name="imagenAsociacion" class="form-control" -->
 			<label for="">Fundación</label>
 			<input type="date" name="fundacionAsociacion" class="form-control" value="{{$asociaciones->fundacionAsociacion}}">
 		
@@ -20,9 +20,13 @@
 			<input type="text" name="sedeAsociacion" class="form-control" value="{{$asociaciones->sedeAsociacion}}">
 			
 			
-    		<label>País</label>
+    		<label>País</label>a
     			<select name="idPais" class="form-control">
-    				<option disabled selected value>Seleciona una opción...</option>
+    				@foreach ($paises as $ps)
+    					@if($asociaciones->idPais === $ps->idPais)
+    				<option  value= "{{$ps['idPais']}}">Actual: {{$ps->nombrePais}}</option>
+    					@endif
+					@endforeach
     				@foreach ($paises as $ps)
     					<option value="{{$ps['idPais']}}">{{$ps['nombrePais']}}</option>
     				@endforeach
@@ -30,7 +34,11 @@
 			
 			<label>Federación</label>
     			<select name="idFederacion" class="form-control">
-    				<option disabled selected value>Seleciona una opción...</option>
+    				@foreach ($federaciones as $fed)
+    					@if($asociaciones->idFederacion === $fed->idFederacion)
+    				<option value="{{$fed['idFederacion']}}">Actual: {{$fed->nombreFederacion}}</option>
+    					@endif
+					@endforeach
     				@foreach ($federaciones as $fed)
     					<option value="{{$fed['idFederacion']}}">{{$fed['nombreFederacion']}}</option>
     				@endforeach
@@ -42,5 +50,5 @@
 
 		</div>
 	</form>
-		<a href="../../asociacion"><button class='btn btn-danger'>Atrás</button></a>
+		<a href="../../admin"><button class='btn btn-danger'>Atrás</button>
 @endsection

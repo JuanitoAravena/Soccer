@@ -20,8 +20,9 @@ class AsociacionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles('admin'); //Se valida que el usuario que verá estos datos sea de tipo administrador
         $asociaciones = Asociacion::all();
         $federaciones=Federacion::all();
         $paises=Pais::all();
@@ -38,8 +39,9 @@ class AsociacionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->authorizeRoles('admin'); //Se valida que el usuario que verá estos datos sea de tipo administrador
         $federaciones=Federacion::all();
         $paises=Pais::all();
 
@@ -97,8 +99,9 @@ class AsociacionController extends Controller
 
 //---------------------------------Funcion que retorna las variables para el edit--------------------------------    
  
-    public function edit($id)
+    public function edit($id, Request $request)
     {
+        $request->user()->authorizeRoles('admin'); //Se valida que el usuario que verá estos datos sea de tipo administrador
         $asociaciones = Asociacion::findOrFail($id);
         $federaciones=Federacion::all();
         $paises=Pais::all();
@@ -131,7 +134,7 @@ class AsociacionController extends Controller
   
         $asociacion->update();
 
-        return Redirect::to('asociacion');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -143,11 +146,12 @@ class AsociacionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
+        $request->user()->authorizeRoles('admin'); //Se valida que el usuario que verá estos datos sea de tipo administrador
         $asociaciones = Asociacion::find($id);
         $asociaciones->delete();
 
-        return Redirect::to('asociacion');
+        return Redirect::to('admin');
     }
 }

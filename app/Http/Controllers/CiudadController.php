@@ -62,7 +62,7 @@ class CiudadController extends Controller
         
         $ciudad->save();
 
-        return Redirect::to('ciudad');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
     /**
@@ -117,7 +117,7 @@ class CiudadController extends Controller
   
         $ciudad->update();
 
-        return Redirect::to('ciudad');
+        return Redirect::to('admin');
     }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -135,6 +135,6 @@ class CiudadController extends Controller
         $ciudades = Ciudad::find($id);
         $ciudades->delete();
 
-        return Redirect::to('ciudad');
+        return Redirect::to('admin');
     }
 }

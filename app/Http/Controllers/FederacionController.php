@@ -64,7 +64,7 @@ class FederacionController extends Controller
         
         $federacion->save();
 
-        return Redirect::to('federacion');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -125,7 +125,7 @@ class FederacionController extends Controller
   
         $federacion->update();
 
-        return Redirect::to('federacion');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -142,6 +142,6 @@ class FederacionController extends Controller
         $federaciones = Federacion::find($id);
         $federaciones->delete();
 
-        return Redirect::to('federacion');
+        return Redirect::to('admin');
     }
 }

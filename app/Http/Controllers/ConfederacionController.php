@@ -66,7 +66,7 @@ class ConfederacionController extends Controller
         
         $confederacion->save();
 
-        return Redirect::to('confederacion');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -127,7 +127,7 @@ class ConfederacionController extends Controller
   
         $confederacion->update();
 
-        return Redirect::to('confederacion');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -144,6 +144,6 @@ class ConfederacionController extends Controller
         $confederaciones = Confederacion::find($id);
         $confederaciones->delete();
 
-        return Redirect::to('confederacion');
+        return Redirect::to('admin');
     }
 }

@@ -112,12 +112,14 @@
 		
 		<div class="row">
 			<div class="col">
+				<a href="/asociacion/create" class="btn btn-success"><span class="glyphicon glyphicon-wrench"></span>Crear Asociación</a>
 				<table class="table table-striped">
 					<thead>
 						<th>ID</th>
 						<th>ID Federación</th>
 						<th>Nombre</th>
 						<th>Fundación</th>
+						<th>Imagen</th>
 						
 						
 						<th>Acción</th>
@@ -136,6 +138,8 @@
 
 								<td>{{ $asoc['nombreAsociacion'] }}</td>
 								<td>{{ $asoc['fundacionAsociacion'] }}</td>
+								<td><img src="images/asociacion/{{ $asoc['imagenAsociacion']}}" class="img-responsive" style="width:60px !important"></td>
+
 								
 								<td>
 									<a href="/asociacion/{{$asoc->idAsociacion}}/edit" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span>Editar</a>
@@ -145,7 +149,7 @@
 						@endforeach
 					</tbody>
 				</table>
-				<a href="/asociacion/create" class="btn btn-success"><span class="glyphicon glyphicon-wrench"></span>Crear Asociación</a>
+				
 			</div>
 		</div>
   	</div>
@@ -155,6 +159,7 @@
 	
 		<div class="row">
 			<div class="col">
+				<a href="/ciudad/create" class="btn btn-success">Crear Ciudad</a>
 				<table class="table table-striped">
 					<thead>
 						<th>ID</th>
@@ -190,7 +195,7 @@
 						@endforeach
 					</tbody>
 				</table>
-				<a href="/ciudad/create" class="btn btn-success">Crear Ciudad</a>
+				
 			</div>
 		</div>
   	</div>
@@ -198,6 +203,7 @@
 
 	<div class="tab-pane fade" id="club" role="tabpanel" aria-labelledby="club-tab">
 		<div class="col">
+			<a href="/club/create" class="btn btn-success">Crear equipo</a>
 			<table class="table table-striped">
 				<thead>
 					<th>ID</th>
@@ -247,7 +253,7 @@
 					</div>
 				</div>
 			@endforeach---->
-				<a href="/club/create" class="btn btn-success">Crear equipo</a>
+				
 
 		</div>
 	</div>
@@ -257,6 +263,8 @@
 	
 		<div class="row">
 			<div class="col">
+										<a href="/confederacion/create" class="btn btn-success">Crear Confederación</a>
+
 				<table class="table table-striped">
 					<thead>
 						<th>ID</th>
@@ -290,7 +298,6 @@
 						@endforeach
 					</tbody>
 				</table>
-						<a href="/confederacion/create" class="btn btn-success">Crear Confederación</a>
 
 			</div>
 		</div>
@@ -300,6 +307,8 @@
 	
 		<div class="row">
 			<div class="col">
+										<a href="/directortecnico/create" class="btn btn-success">Crear Director Tecnico</a>
+
 				<table class="table table-striped">
 					<thead>
 						<th>ID</th>
@@ -342,7 +351,6 @@
 						@endforeach
 					</tbody>
 				</table>
-						<a href="/directortecnico/create" class="btn btn-success">Crear Director Tecnico</a>
 
 			</div>
 		</div>
@@ -352,6 +360,8 @@
 	
 		<div class="row">
 			<div class="col">
+										<a href="/estadio/create" class="btn btn-success">Crear Estadio</a>
+
 				<table class="table table-striped">
 					<thead>
 						<th>ID</th>
@@ -397,7 +407,6 @@
 						@endforeach
 					</tbody>
 				</table>
-						<a href="/estadio/create" class="btn btn-success">Crear Estadio</a>
 
 			</div>
 		</div>
@@ -407,6 +416,8 @@
 	
 		<div class="row">
 			<div class="col">
+										<a href="/federacion/create" class="btn btn-success">Crear Federación</a>
+
 				<table class="table table-striped">
 					<thead>
 						<th>ID</th>
@@ -440,7 +451,6 @@
 						@endforeach
 					</tbody>
 				</table>
-						<a href="/federacion/create" class="btn btn-success">Crear Federación</a>
 
 			</div>
 		</div>
@@ -450,6 +460,8 @@
 		
 		<div class="row">
 			<div class="col">
+											<a href="/jugador/create" class="btn btn-success">Crear Jugador</a>
+
 				<table class="table table-striped">
 					<thead>
 						<th>ID</th>
@@ -507,7 +519,6 @@
 						@endforeach
 					</tbody>
 				</table>
-							<a href="/jugador/create" class="btn btn-success">Crear Jugador</a>
 
 			</div>
 		</div>
@@ -516,6 +527,8 @@
 	<div class="tab-pane fade" id="pais" role="tabpanel" aria-labelledby="pais-tab">
 		<div class="row">
 			<div class="col">
+												<a href="/pais/create" class="btn btn-success">Añadir nuevo País...</a>
+
 					<table class="table table-striped">
 						<thead>
 							<th>ID</th>
@@ -548,7 +561,6 @@
 							@endforeach
 						</tbody>
 					</table>
-								<a href="/pais/create" class="btn btn-success">Añadir nuevo País...</a>
 
 			
 			</div>		
@@ -559,6 +571,8 @@
 	
 		<div class="row">
 			<div class="col">
+										<a href="/torneo/create" class="btn btn-success">Crear Torneo</a>
+
 				<table class="table table-striped">
 					<thead>
 						<th>ID</th>
@@ -608,7 +622,6 @@
 						@endforeach
 					</tbody>
 				</table>
-						<a href="/torneo/create" class="btn btn-success">Crear Torneo</a>
 
 			</div>
 		</div>

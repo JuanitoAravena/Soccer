@@ -89,7 +89,7 @@ class JugadorController extends Controller
         
         $jugador->save();
 
-        return Redirect::to('jugador');
+        return Redirect::to('admin');
 
     }
 //-------------------------------------------------------------------------------------------------------------------
@@ -165,7 +165,7 @@ class JugadorController extends Controller
   
         $jugador->update();
 
-        return Redirect::to('jugador');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -183,6 +183,6 @@ class JugadorController extends Controller
         $jugadores = Jugador::find($id);
         $jugadores->delete();
 
-        return Redirect::to('jugador');
+        return Redirect::to('admin');
     }
 }

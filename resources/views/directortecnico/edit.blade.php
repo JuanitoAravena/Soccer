@@ -35,6 +35,6 @@
 
 		</div>
 	</form>
-		<a href="../../directortecnico"><button class='btn btn-danger'>Atrás</button></a>
+		<a href="../../admin"><button class='btn btn-danger'>Atrás</button>
 
 @endsection

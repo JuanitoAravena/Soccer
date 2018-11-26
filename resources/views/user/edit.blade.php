@@ -17,7 +17,7 @@
 			<input type="text" name="email" class="form-control" value="{{$users->email}}">
 			<label for="">Contraseña</label>
 			<input type="password" name="password" class="form-control" value="">
-			<label for="">Tipo</label>
+			<!--label for="">Tipo</label>
 			<select name="tipoUsuario" class="form-control">
     				<option disabled selected value>Seleciona una opción...</option>
 					<option value="usuario">Usuario</option>
@@ -26,7 +26,7 @@
 					
 
 
-			</select>	
+			</select-->	
 
 				
 

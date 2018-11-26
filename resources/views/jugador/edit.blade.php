@@ -63,6 +63,6 @@
 			<button type="submit" class="btn btn-primary">Guardar</button>
 		</div>
 	</form>
-		<a href="../../jugador"><button class='btn btn-danger'>Atrás</button></a>
+		<a href="../../admin"><button class='btn btn-danger'>Atrás</button>
 
 @endsection

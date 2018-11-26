@@ -97,7 +97,8 @@ class ClubController extends Controller
         $club->idTorneo = $request->input('idTorneo');
         $club->save();
 
-        return Redirect::to('club');
+        return Redirect::to('admin');
+
 
         
         
@@ -191,7 +192,8 @@ class ClubController extends Controller
   
         $club->update();
 
-        return Redirect::to('club');
+        return Redirect::to('admin');
+
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -209,7 +211,8 @@ class ClubController extends Controller
         $clubes = Club::find($id);
         $clubes->delete();
 
-        return Redirect::to('club');
+        return Redirect::to('admin');
+
 
 
     }

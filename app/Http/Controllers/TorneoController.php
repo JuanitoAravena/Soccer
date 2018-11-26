@@ -66,7 +66,7 @@ class TorneoController extends Controller
         $torneo->idAsociacion = $request->input('idAsociacion');
         $torneo->save();
 
-        return Redirect::to('torneo');
+        return Redirect::to('admin');
 
     }
 //-------------------------------------------------------------------------------------------------------------------
@@ -129,7 +129,7 @@ class TorneoController extends Controller
   
         $torneo->update();
 
-        return Redirect::to('torneo');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -146,6 +146,6 @@ class TorneoController extends Controller
         $torneos = Torneo::find($id);
         $torneos->delete();
 
-        return Redirect::to('torneo');
+        return Redirect::to('admin');
     }
 }

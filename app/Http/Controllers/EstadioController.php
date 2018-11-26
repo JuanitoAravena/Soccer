@@ -63,7 +63,7 @@ class EstadioController extends Controller
         
         $estadio->save();
 
-        return Redirect::to('estadio');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ class EstadioController extends Controller
   
         $estadio->update();
 
-        return Redirect::to('estadio');
+        return Redirect::to('admin');
     }
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -149,6 +149,6 @@ class EstadioController extends Controller
         $estadios = Estadio::find($id);
         $estadios->delete();
 
-        return Redirect::to('estadio');
+        return Redirect::to('admin');
     }
 }

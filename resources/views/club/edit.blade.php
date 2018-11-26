@@ -73,6 +73,6 @@
 
 		</div>
 	</form>
-		<a href="../../club"><button class='btn btn-danger'>Atrás</button></a>
+		<a href="../../admin"><button class='btn btn-danger'>Atrás</button>
 
 @endsection
